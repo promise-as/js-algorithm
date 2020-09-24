@@ -30,9 +30,15 @@ const tree = {
   ]
 };
 
-const dfs = (root) => {
-  console.log(root.val);
-  root.children.forEach(dfs);
+const bfs = (root) => {
+  const q = [root];
+  while(q.length > 0){
+    const n = q.shift();
+    console.log(n.val);
+    n.children.forEach(child => {
+      q.push(child);
+    });
+  }
 }
 
-dfs(tree);
+bfs(tree);
