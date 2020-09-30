@@ -18,5 +18,4 @@ const preorder = (root) => {
   }
 }
 
-
 preorder(bt);
