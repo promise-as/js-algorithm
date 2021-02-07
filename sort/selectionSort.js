@@ -1,18 +1,20 @@
-Array.prototype.selectionSort = function(){
-  for(var i = 0; i < this.length - 1; i++){
-    let indexMin = i;
-    for(var j = i; j < this.length; j++){
-      if(this[j] < this[indexMin]){
-        indexMin = j;
+Array.prototype.selectionSort = function () {
+  for(let i = 0; i < this.length - 1; i++){
+    let minIndex = i;
+    for(let j = i + 1; j < this.length; j++){
+      if(this[j] < this[minIndex]){
+        minIndex = j
       }
     }
-    if(indexMin !== i){
-      const temp = this[i];
-      this[i] = this[indexMin];
-      this[indexMin] = temp;
+    if(minIndex !== i){
+      let temp = this[i]
+      this[i] = this[minIndex]
+      this[minIndex] = temp
     }
-    
   }
+  console.log(arr)
 };
+console.time('时间');
 const arr = [5, 4, 3, 2, 1];
 arr.selectionSort();
+console.timeEnd('时间');
